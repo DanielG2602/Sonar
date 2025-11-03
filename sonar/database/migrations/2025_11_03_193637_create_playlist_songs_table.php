@@ -6,14 +6,14 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-
     public function up(): void
     {
         Schema::create('playlist_songs', function (Blueprint $table) {
-            $table->foreignId('playlist_id')->primary();
-            $table->foreignId('song_id')->primary();
-            $table->integer('order_index');
-            $table->timestamps();
+
+            $table->foreignId('playlist_id')->constrained('playlists')->onDelete('cascade');
+            $table->foreignId('song_id')->constrained('songs')->onDelete('cascade');           
+            $table->integer('order_index')->nullable();
+            $table->primary(['playlist_id', 'song_id']);
         });
     }
 

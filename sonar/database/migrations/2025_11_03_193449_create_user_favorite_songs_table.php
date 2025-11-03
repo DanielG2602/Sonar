@@ -1,18 +1,16 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-
     public function up(): void
     {
         Schema::create('user_favorite_songs', function (Blueprint $table) {
-            $table->foreignId('user_id')->primary();
-            $table->foreignId('song_id')->primary();
-            $table->timestamps();
+            $table->foreignId('user_id')->constrained('user_systems')->onDelete('cascade');
+            $table->foreignId('song_id')->constrained('songs')->onDelete('cascade');            
+            $table->primary(['user_id', 'song_id']);
         });
     }
 

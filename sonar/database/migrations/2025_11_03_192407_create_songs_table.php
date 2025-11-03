@@ -10,10 +10,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('songs', function (Blueprint $table) {
-            $table->id()->primary();
+            $table->id();
             $table->string('title');
             $table->string('artist');
-            $table->string('album');
+            $table->string('album')->nullable();
             $table->integer('duration_seconds');
             $table->timestamps();
         });
