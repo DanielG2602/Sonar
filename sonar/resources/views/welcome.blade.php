@@ -6,6 +6,20 @@
     <title>Sonar</title>
 </head>
 <body>
+
+    <header>
+        <h1>Sonar</h1>
+
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">contact</a></li>
+            <li>||</li>
+            <li><a href="">sing up</a></li>
+            <li><a href="">login</a></li>
+        </ul>
+    </header>
+
     <main>
         <fieldset>
             <h2>Log in</h2>
