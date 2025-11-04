@@ -11,7 +11,7 @@ return new class extends Migration
 
     public function up(): void
     {
-        Schema::create('playlists', function (Blueprint $table) {
+        Schema::create('playlist', function (Blueprint $table) {
             $table->id()->primary();
             $table->foreignId('user_id');
             $table->string('name');
